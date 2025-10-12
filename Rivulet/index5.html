@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>珍珠</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+html,body{margin:0;height:100%;background:#000;color:#fff;font-family:monospace}
+#game,#text{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%}
+.btn{position:relative;width:160px;height:60px;margin:20px;font-size:20px;border:none;border-radius:8px;cursor:pointer;transition:transform .2s}
+#hint{position:fixed;top:10%;left:50%;transform:translateX(-50%);font-size:18px;transition:color .3s}
+#box{max-width:700px;margin:10vh auto;padding:0 20px;line-height:1.8;white-space:pre-wrap;word-break:break-word}
+.cursor:after{content:"_";animation:blink 1s steps(2) infinite}
+@keyframes blink{0%{opacity:1}100%{opacity:0}}
+</style>
+</head>
+<body>
+
+<!-- 开场提问 -->
+<div id="game">
+    <div id="question" style="margin-bottom:30px;font-size:22px;">纯音乐</div>
+</div>
+
+<!-- 提示 -->
+<div id="hint"></div>
+
+<!-- 正文 -->
+<div id="text" style="display:none">
+    <div id="box"><span id="txt"></span><span class="cursor"></span></div>
+</div>
+
+<!-- 背景音乐 -->
+<audio id="bgm" src="Halcon Memories.mp3" loop></audio>
+
+<script>
+
+const text   = document.getElementById('text');
+const bgm    = document.getElementById('bgm');
+
+function playBgm() { bgm.play();  }
+
+playBgm();
+
+
+</script>
+</body>
+</html>
